@@ -34,8 +34,3 @@ Now RestKit is integrated in your Project. Open Workspace instead of xcodeprojec
 
 # After Implemented weatherInfo app with RestKit:
 
-/Users/sitanshu.j/Desktop/iOS Simulator Screen Shot Jan 17, 2015, 11.18.29 PM.png
-
-/Users/sitanshu.j/Desktop/iOS Simulator Screen Shot Jan 17, 2015, 11.18.51 PM.png
-
-/Users/sitanshu.j/Desktop/iOS Simulator Screen Shot Jan 17, 2015, 11.19.04 PM.png
