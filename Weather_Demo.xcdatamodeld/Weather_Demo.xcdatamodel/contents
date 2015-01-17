@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="City" representedClassName="City" syncable="YES">
+        <attribute name="coord" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ids" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="population" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="data2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ForecastList" inverseName="city" inverseEntity="ForecastList" syncable="YES"/>
+    </entity>
+    <entity name="ForecastList" representedClassName="ForecastList" syncable="YES">
+        <attribute name="cnt" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="data2" inverseEntity="City" syncable="YES"/>
+        <relationship name="listOfCity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ListOfCityWeather" inverseName="list" inverseEntity="ListOfCityWeather" syncable="YES"/>
+    </entity>
+    <entity name="ListOfCityWeather" representedClassName="ListOfCityWeather" syncable="YES">
+        <attribute name="clouds" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="deg" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="dt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="humidity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="pressure" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="temp" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="list" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ForecastList" inverseName="listOfCity" inverseEntity="ForecastList" syncable="YES"/>
+        <relationship name="weather" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weather" inverseName="data1" inverseEntity="Weather" syncable="YES"/>
+    </entity>
+    <entity name="MyCity" representedClassName="MyCity" syncable="YES">
+        <attribute name="base" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="clouds" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="cod" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="coord" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="dt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="ids" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="main" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sys" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="wind" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="weather" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weather" inverseName="data" inverseEntity="Weather" syncable="YES"/>
+    </entity>
+    <entity name="Weather" representedClassName="Weather" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ids" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="main" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="data" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MyCity" inverseName="weather" inverseEntity="MyCity" syncable="YES"/>
+        <relationship name="data1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListOfCityWeather" inverseName="weather" inverseEntity="ListOfCityWeather" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="City" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="ForecastList" positionX="0" positionY="144" width="128" height="118"/>
+        <element name="ListOfCityWeather" positionX="-54" positionY="27" width="128" height="178"/>
+        <element name="MyCity" positionX="-18" positionY="81" width="128" height="208"/>
+        <element name="Weather" positionX="-36" positionY="54" width="128" height="135"/>
+    </elements>
+</model>

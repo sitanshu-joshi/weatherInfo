@@ -1,0 +1,43 @@
+//
+//  weather-demo.pch
+//  weather-demo
+//
+//  Created by Sitanshu Joshi on 1/16/15.
+//  Copyright (c) 2015 Sitanshu Joshi. All rights reserved.
+//
+
+#ifndef weather_demo_weather_demo_pch
+#define weather_demo_weather_demo_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+
+#import "Enum.h"
+#import <CoreData/CoreData.h>
+#import <RestKit/RestKit.h>
+#import <RestKit/CoreData.h>
+#import <RestKit/Network/RKObjectManager.h>
+#import <RestKit/ObjectMapping/RKObjectMappingOperationDataSource.h>
+
+#import "AppDelegate.h"
+#import "Constant.h"
+#import <RestKit/RestKit/RestKit.h>
+
+// View Controller
+#import "ForecastViewController.h"
+#import "MyCityViewController.h"
+#import "ViewController.h"
+
+// Data Objects
+#import "MyCity.h"
+#import "Weather.h"
+#import "City.h"
+#import "ListOfCityWeather.h"
+#import "ForecastList.h"
+
+#endif
